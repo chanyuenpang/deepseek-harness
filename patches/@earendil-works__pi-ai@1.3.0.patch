@@ -73,6 +73,34 @@ index 0eeaffa..2e13492 100644
                      };
                  });
              }
+diff --git a/dist/api/openai-codex-responses.js b/dist/api/openai-codex-responses.js
+--- a/dist/api/openai-codex-responses.js
++++ b/dist/api/openai-codex-responses.js
+@@ -777,10 +777,23 @@ function isWebSocketSessionExpired(entry) {
+     return Date.now() - entry.createdAt >= SESSION_WEBSOCKET_MAX_AGE_MS;
+ }
+ function closeWebSocketSilently(socket, code = 1000, reason = "done") {
++    if (getWebSocketReadyState(socket) === 3)
++        return;
++    // ws emits an asynchronous error when closing a CONNECTING socket.
++    // Keep it handled until close, after request listeners have been removed.
++    const ignoreError = () => {};
++    const cleanup = () => {
++        socket.removeEventListener("error", ignoreError);
++        socket.removeEventListener("close", cleanup);
++    };
++    socket.addEventListener("error", ignoreError);
++    socket.addEventListener("close", cleanup);
+     try {
+         socket.close(code, reason);
+     }
+-    catch { }
++    catch {
++        cleanup();
++    }
+ }
+ function scheduleSessionWebSocketExpiry(sessionId, accountId, entry) {
+     if (entry.idleTimer) {
 diff --git a/dist/api/openai-responses-shared.js b/dist/api/openai-responses-shared.js
 index af5f042..b9f00fb 100644
 --- a/dist/api/openai-responses-shared.js
