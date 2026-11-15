@@ -1,0 +1,22 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write contrib/codex-websocket-close-hotfix/README.md
+/codex-websocket-close-hotfix:
+  en: 340e6877cdbc7398
+  zh: f0ee7daef55e5c3d
+/codex-websocket-close-hotfix/install-and-verify:
+  en: 5e594c4bf7fb1f50
+  zh: eb66c22d4de66e62
+/codex-websocket-close-hotfix/behavior-and-rollback:
+  en: d446bedb7e84f7cc
+  zh: 3e4158413e93ea30
+/codex-websocket-close-hotfix/model-experience:
+  en: 60e588b20ad7de0e
+  zh: 98fc73b49b4d91fc
+/codex-websocket-close-hotfix/development-verification:
+  en: b4d5cb880fce4f71
+  zh: be3d412f6630ad56
+/codex-websocket-close-hotfix/known-limitations:
+  en: 16d850bef785eea5
+  zh: 2ca48535259b9646

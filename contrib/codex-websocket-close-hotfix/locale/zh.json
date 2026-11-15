@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Codex WebSocket 关闭热修复",
+    "description": "保护 Codex 连接建立前关闭时产生的已知异步错误，保留 WebSocket 模式，不修改 Desktop 安装资源。停用此扩展可回滚。验证目标为 DSH 0.2.2-rc.3、dsh-codex-subscription 3.2.14 与 ws 8.21.3。可让助手运行 codex_websocket_hotfix_check 查询运行状态并进行可选的纯本机自检。这不是官方 Desktop 更新。"
+  }
+}

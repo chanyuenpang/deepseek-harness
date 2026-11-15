@@ -1,0 +1,23 @@
+{
+  "name": "@chanyuenpang/dsh-codex-websocket-close-hotfix",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Reversible Codex WebSocket connecting-close safety fix for DSH Desktop",
+  "type": "module",
+  "exports": {
+    ".": "./host.js",
+    "./host": "./host.js",
+    "./host/locale/*.json": "./locale/*.json",
+    "./host/icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["host.js", "guard.js", "consumer.js", "self-test.js", "cordis.patch.yml", "locale", "icon.svg", "README.md", "README.zh.md", "LICENSE"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "engines": { "node": ">=24", "dsh": "0.2.2-rc.3" },
+  "peerDependencies": { "dsh-codex-subscription": "3.2.14", "@deepseek-ai/dsh-llm-pi-ai": "0.2.2-rc.3" },
+  "devDependencies": { "ws": "8.21.3" },
+  "scripts": { "test": "node --test test/*.test.mjs", "check": "node --check host.js && node --check guard.js && node --check consumer.js && node --check self-test.js" },
+  "repository": { "type": "git", "url": "https://github.com/chanyuenpang/deepseek-harness.git", "directory": "contrib/codex-websocket-close-hotfix" },
+  "license": "MIT"
+}

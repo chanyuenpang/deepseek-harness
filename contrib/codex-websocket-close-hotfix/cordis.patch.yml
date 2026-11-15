@@ -1,0 +1,4 @@
+- insert:
+    - id: codex-websocket-close-hotfix
+      name: '@chanyuenpang/dsh-codex-websocket-close-hotfix/host'
+      config: {}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Codex WebSocket close hotfix",
+    "description": "Protects the known asynchronous error when a connecting Codex socket is closed. Keeps WebSocket mode, does not edit Desktop resources, and is reversible by disabling this bundle. Tested target: DSH 0.2.2-rc.3, dsh-codex-subscription 3.2.14 and ws 8.21.3. Ask the assistant to run codex_websocket_hotfix_check for live status and an optional local-only self-test. This is not an official Desktop update."
+  }
+}
